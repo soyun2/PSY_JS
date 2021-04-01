@@ -1,4 +1,4 @@
-let n = 4
+let n = 1
 
 let star = ''
 let count = n;

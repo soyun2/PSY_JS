@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="one" type="text"> + <input id="two" type="text"> =
+    <div id="result1">결과가 여기 나옴</div>
+
+    <input id="three" type="text"> - <input id="four" type="text"> =
+    <div id="result2">결과가 여기 나옴</div>
+
+    <input id="a" type="text"> * <input id="b" type="text"> =
+    <div id="result3">결과가 여기 나옴</div>
+
+    <input id="c" type="text"> / <input id="d" type="text"> =
+    <div id="result4">결과가 여기 나옴</div>
+
+    <div>
+        <input value="+" type="button" onclick = "sum()">
+        <input value="-" type="button" onclick = "minus()">
+        <input value="*" type="button" onclick = "mple()">
+        <input value="/" type="button" onclick = "divide()">
+    </div>
+    <script>
+        function sum()
+        {
+            var one = document.getElementById('one').value;
+            let two = document.getElementById('two').value;
+            let sum = Number(one)+Number(two)
+            alert(sum)
+            document.getElementById('result1').innerText=sum;
+        }
+        function minus()
+        {
+            var one = document.getElementById('one').value;
+            let two = document.getElementById('two').value;
+            let minus = Number(one)-Number(two)
+            alert(minus)
+            document.getElementById('result2').innerText=minus;
+        }
+        function mple()
+        {
+            var a = document.getElementById('a').value;
+            let b = document.getElementById('b').value;
+            let mple = Number(a)*Number(b)
+            alert(mple)
+            document.getElementById('result3').innerText=mple;
+        }
+        function divide()
+        {
+            var one = document.getElementById('c').value;
+            let two = document.getElementById('d').value;
+            let divide = Number(one)/Number(two)
+            alert(divide)
+            document.getElementById('result4').innerText=divide;
+        }
+    </script>
+</body>
+</html>
