@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id='one'>첫 번째</h1>
+    <h1 id='two'>두 번째</h1>
+    <h1 id="three">세 번째</h1>
+    <img id="image">
+    <script>
+        function welcome(){
+            alert("안녕하세요")
+            let image = document.querySelector('image')
+            image.setAttribute('src','가위.png')
+        }
+        //화면이 불러와지자 마자 수행하는 것
+        document.addEventListener('DOMContentLoaded',welcome)
+        let one = document.querySelector('#one')
+        one.addEventListener('click',
+        (event) =>
+        {
+            one.style.color = 'red'
+        });
+        let two = document.querySelector("#two")
+        two.addEventListener('click',
+        (event) => 
+        {
+            two.style.backgroundColor='yellowgreen'
+        });
+        let three=document.querySelector("#three")
+        three.onclick = () => {three.style.color = 'blue'}
+        //three.onclick = function(){three.style.color = 'blue'} 와 동일
+    </script>
+</body>
+</html>

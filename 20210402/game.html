@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="scissors" onclick="start('가위')">가위</button>
+    <button id="rock" onclick="start('바위')">바위</button>
+    <button id="paper" onclick="start('보')">보</button>
+
+    <div></div>
+
+    나 <img id="mine">
+    컴퓨터 <img id="computer">
+    <h1 id="result">결과</h1>
+
+    <script>
+        function start(mine) {
+            console.log("나 : " + mine)
+            const RockScissorsPaper = ['가위', '바위', '보']
+            const computer = RockScissorsPaper[Math.floor(Math.random() * 3)]
+            console.log("컴퓨터 : " + computer)
+            let myresult = document.getElementById('mine')
+            let comresult = document.getElementById('computer')
+            let result = document.getElementById('result')
+
+            switch (mine) {
+                case '가위':
+                    myresult.src = "가위.png"
+                    switch (computer) {
+                        case '가위':
+                            result.innerText='비겼습니다.'
+                            comresult.src = "가위.png"
+                            break;
+                        case '바위':
+                            result.innerText='졌습니다.'
+                            comresult.src = "바위.png"
+                            break;
+                        case '보':
+                            result.innerText='이겼습니다.'
+                            comresult.src = '보.png'
+                            break;
+                    }
+                    break;
+                case '바위':
+                    myresult.src = '바위.png'
+                    switch (computer) {
+                        case '가위':
+                            result.innerText='이겼습니다.'
+                            comresult.src = "가위.png"
+                            break;
+                        case '바위':
+                            result.innerText='비겼습니다.'
+                            comresult.src = "바위.png"
+                            break;
+                        case '보':
+                            result.innerText = '졌습니다.'
+                            comresult.src = '보.png'
+                            break;
+                    }
+                    break;
+                case '보':
+                    myresult.src = '보.png'
+                    switch (computer) {
+                        case '가위':
+                            result.innerText='졌습니다.'
+                            comresult.src = "가위.png"
+                            break;
+                        case '바위':
+                            result.innerText='이겼습니다.'
+                            comresult.src = "바위.png"
+                            break;
+                        case '보':
+                            result.innerText='비겼습니다.'
+                            comresult.src = '보.png'
+                            break;
+                    }
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
